@@ -25,3 +25,6 @@ function operate(a, char, b) {
         return divide(a,b);
     }
 };
+
+const screen = document.querySelector(".calc-screen");
+screen.textContent = "";

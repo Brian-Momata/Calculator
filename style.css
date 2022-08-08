@@ -28,6 +28,9 @@ body {
 .calc-screen {
     margin-top: auto;
     margin-bottom: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
 }
 .keys {
     background-color: grey;

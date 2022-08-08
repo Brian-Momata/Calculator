@@ -28,3 +28,11 @@ function operate(a, char, b) {
 
 const screen = document.querySelector(".calc-screen");
 screen.textContent = "0";
+
+const operands = document.querySelectorAll(".operands");
+operands.forEach((button) => {
+    screen.textContent = "";
+    button.addEventListener("click", (e) => {
+    
+    screen.textContent += e.target.value;
+})});

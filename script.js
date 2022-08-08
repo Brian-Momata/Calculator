@@ -27,4 +27,4 @@ function operate(a, char, b) {
 };
 
 const screen = document.querySelector(".calc-screen");
-screen.textContent = "";
+screen.textContent = "0";

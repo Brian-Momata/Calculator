@@ -48,6 +48,7 @@ button {
     font-size: 1.2em;
     padding: 1em;
     border-radius: 8px;
+    cursor: pointer;
 }
 .operators {
     background: yellow;
@@ -58,4 +59,7 @@ button {
 }
 .operate {
     width: 40%;
+}
+button > * {
+    pointer-events: none;
 }

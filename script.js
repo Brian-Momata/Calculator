@@ -29,22 +29,28 @@ function operate(a, char, b) {
 const screen = document.querySelector(".calc-screen");
 screen.textContent = "0";
 
+function limitCharacters(){
+    if (screen.textContent.length > 14){
+        screen.textContent = screen.textContent.subString(0, 14);
+    }
+}
+
 const operands = document.querySelectorAll(".operands");
 operands.forEach((button) => {
     screen.textContent = "";
     button.addEventListener("click", (e) => {
-    
-    screen.textContent += e.target.value;
-    storeInput();
+        limitCharacters();
+        screen.textContent += e.target.value;
+        storeInput();
 })});
 
 const operators = document.querySelectorAll(".operators");
 operators.forEach((button) => {
     screen.textContent = "";
     button.addEventListener("click", (e) => {
-    
-    screen.textContent += e.target.value;
-    storeInput();
+        limitCharacters();
+        screen.textContent += e.target.value;
+        storeInput();
 })});
 
 

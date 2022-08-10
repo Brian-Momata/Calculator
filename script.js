@@ -74,3 +74,13 @@ const equals = document.querySelector(".operate");
 equals.addEventListener("click", function(){
     screen.textContent = operate(num1, character, num2);
 })
+
+function clearData() {
+    screen.textContent = "";
+    num1 = "";
+    num2 = "";
+    character = "";
+}
+
+const clear = document.querySelector(".clear");
+clear.addEventListener("click", ()=> clearData());

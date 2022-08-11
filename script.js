@@ -62,7 +62,6 @@ operators.forEach((button) => {
         storeInput();
 })});
 
-
 let num1;
 let num2;
 let character;
@@ -73,8 +72,8 @@ function storeInput(){
     for (let i = 0; i < numbers.length; i++){
         if (numbers[i] == "+" || numbers[i] == "-" || numbers[i] == "/" || numbers[i] == "*"){
             character = numbers[i];
-            num1 = parseInt(numbers.slice(0, i));
-            num2 = parseInt(numbers.slice( i + 1, numbers.length));
+            num1 = parseFloat(numbers.slice(0, i));
+            num2 = parseFloat(numbers.slice( i + 1, numbers.length));
         }
     }
 };
@@ -93,3 +92,8 @@ function clearData() {
 
 const clear = document.querySelector(".clear");
 clear.addEventListener("click", ()=> clearData());
+
+const dot = document.querySelector(".dot");
+dot.addEventListener("click", (e) =>{
+    screen.textContent += e.target.value;
+})

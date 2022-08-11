@@ -46,9 +46,18 @@ operands.forEach((button) => {
 
 const operators = document.querySelectorAll(".operators");
 operators.forEach((button) => {
-    screen.textContent = "";
     button.addEventListener("click", (e) => {
         limitCharacters();
+        let myRegEx = /[+-/*]/;
+        if (screen.textContent == ""){
+            return;
+        }
+        if (myRegEx.test(screen.textContent)) { 
+            /* checks whether the screen already has an operator
+            and evaluates the inputs before appending the operator
+        */
+            screen.textContent = operate(num1, character, num2);
+        }
         screen.textContent += e.target.value;
         storeInput();
 })});

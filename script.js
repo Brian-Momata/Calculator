@@ -48,7 +48,7 @@ const operators = document.querySelectorAll(".operators");
 operators.forEach((button) => {
     button.addEventListener("click", (e) => {
         limitCharacters();
-        let myRegEx = /[+-/*]/;
+        let myRegEx = /[^0-9.]/g;
         if (screen.textContent == ""){
             return;
         }

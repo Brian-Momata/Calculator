@@ -8,6 +8,9 @@ function multiply(a,b){
     return a * b;
 };
 function divide(a,b){
+    if (b == 0){
+        return "Error";
+    }
     return a / b;
 };
 
@@ -41,6 +44,7 @@ let numbers;
 operands.forEach((button) => {
     screen.textContent = "";
     button.addEventListener("click", (e) => {
+        if(screen.textContent == "Error") return;
         screen.textContent += e.target.value;
         storeInput();
 })});
@@ -50,6 +54,7 @@ operators.forEach((button) => {
         if (screen.textContent == ""){
             return;
         }
+        if(screen.textContent == "Error") return;
         if (myRegEx.test(screen.textContent)) { 
             /* checks whether the screen already has an operator
             and evaluates the inputs before appending the operator

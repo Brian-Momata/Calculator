@@ -58,7 +58,7 @@ button {
     background: teal;
 }
 .operate {
-    width: 40%;
+    width: 75%;
 }
 button > * {
     pointer-events: none;
@@ -70,4 +70,11 @@ button > * {
     justify-content: center;
     align-items: center;
     border-radius: 18px;
+}
+footer {
+    text-align: center;
+    margin-top: auto;
+    font-size: 1.3rem;
+    color: black;
+    padding: 0.5em;
 }

@@ -69,6 +69,11 @@ equals.addEventListener("click", function(){
 });
 clear.addEventListener("click", ()=> clearData());
 dot.addEventListener("click", (e) =>{
+    if (num2 == undefined){
+        if(screen.textContent.includes(".")) return;
+    } else if(num2.toString().includes(".")) {
+        return;
+    }
     screen.textContent += e.target.value;
 });
 
@@ -84,7 +89,7 @@ function storeInput(){
 };
 function clearData() {
     screen.textContent = "";
-    num1 = "";
-    num2 = "";
-    character = "";
+    num1 = undefined;
+    num2 = undefined;
+    character = undefined;
 }

@@ -27,27 +27,25 @@ function operate(a, char, b) {
 };
 
 const screen = document.querySelector(".calc-screen");
-screen.textContent = "0";
-
-function limitCharacters(){
-    if (screen.textContent.length > 14){
-        screen.textContent = screen.textContent.subString(0, 14);
-    }
-}
-
 const operands = document.querySelectorAll(".operands");
+const equals = document.querySelector(".operate");
+const operators = document.querySelectorAll(".operators");
+const clear = document.querySelector(".clear");
+const dot = document.querySelector(".dot");
+
+let num1;
+let num2;
+let character;
+let numbers;
+
 operands.forEach((button) => {
     screen.textContent = "";
     button.addEventListener("click", (e) => {
-        limitCharacters();
         screen.textContent += e.target.value;
         storeInput();
 })});
-
-const operators = document.querySelectorAll(".operators");
 operators.forEach((button) => {
     button.addEventListener("click", (e) => {
-        limitCharacters();
         let myRegEx = /[^0-9.]/g;
         if (screen.textContent == ""){
             return;
@@ -61,11 +59,13 @@ operators.forEach((button) => {
         screen.textContent += e.target.value;
         storeInput();
 })});
-
-let num1;
-let num2;
-let character;
-let numbers;
+equals.addEventListener("click", function(){
+    screen.textContent = operate(num1, character, num2);
+});
+clear.addEventListener("click", ()=> clearData());
+dot.addEventListener("click", (e) =>{
+    screen.textContent += e.target.value;
+});
 
 function storeInput(){
     numbers = screen.textContent;
@@ -77,23 +77,9 @@ function storeInput(){
         }
     }
 };
-
-const equals = document.querySelector(".operate");
-equals.addEventListener("click", function(){
-    screen.textContent = operate(num1, character, num2);
-})
-
 function clearData() {
     screen.textContent = "";
     num1 = "";
     num2 = "";
     character = "";
 }
-
-const clear = document.querySelector(".clear");
-clear.addEventListener("click", ()=> clearData());
-
-const dot = document.querySelector(".dot");
-dot.addEventListener("click", (e) =>{
-    screen.textContent += e.target.value;
-})

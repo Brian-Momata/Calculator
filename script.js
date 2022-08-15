@@ -35,6 +35,7 @@ const equals = document.querySelector(".operate");
 const operators = document.querySelectorAll(".operators");
 const clear = document.querySelector(".clear");
 const dot = document.querySelector(".dot");
+const deleteLast = document.querySelector(".remove");
 
 let num1;
 let num2;
@@ -76,6 +77,9 @@ dot.addEventListener("click", (e) =>{
     }
     screen.textContent += e.target.value;
 });
+deleteLast.addEventListener("click", ()=>{
+    screen.textContent = screen.textContent.slice(0, -1);
+})
 
 function storeInput(){
     numbers = screen.textContent;

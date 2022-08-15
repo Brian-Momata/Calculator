@@ -4,12 +4,11 @@ body {
 }
 .calculator {
     background: black;
-    width: 350px;
-    height: 500px;
+    width: 320px;
+    height: 550px;
     border-radius: 18px;
     margin: auto;
     margin-top: 40px;
-    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -36,7 +35,6 @@ body {
     width: 90%;
     margin-top: 20px;
     border-radius: 18px;
-    display: flex;
 }
 .inputkeys {
     padding: 10px;
@@ -46,21 +44,30 @@ body {
     gap: 5px;
 }
 button {
-    font-size: 1.2em;
+    font-size: 1.4em;
     padding: 1em;
     border-radius: 8px;
     cursor: pointer;
+    height: min-content;
 }
 .operators {
     background: yellow;
+    width: 65px;
 }
 .clear {
     background: teal;
-    font-size: 1.4em;
 }
 .operate {
     width: 40%;
 }
 button > * {
     pointer-events: none;
+}
+.remove {
+    background: rgb(160, 27, 27);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 18px;
 }

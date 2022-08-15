@@ -16,16 +16,16 @@ function divide(a,b){
 
 function operate(a, char, b) {
     if (char == "*"){
-        return multiply(a,b);
+        return +(multiply(a,b)).toFixed(6);
     }
     if (char == "+"){
-        return add(a,b);
+        return +(add(a,b)).toFixed(6);
     }
     if (char == "-"){
-        return subtract(a,b);
+        return +(subtract(a,b)).toFixed(6);
     }
     if (char == "/"){
-        return divide(a,b);
+        return +(divide(a,b)).toFixed(6);
     }
 };
 
